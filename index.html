@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="node_modules/reveal.js/dist/reveal.css">
+    <link rel="stylesheet" href="node_modules/reveal.js/dist/theme/black.css">
+</head>
+<body>
+
+    <div class="reveal">
+        <div class="slides">
+
+        <section>
+          <style>
+            .timeline {
+              position: relative; padding-left: 2.5rem;
+            }
+            .timeline::before {
+              content: ""; position: absolute; left: 1rem; top: 0; bottom: 0; width: 2px; background: #888;
+            }
+            .node {
+              position: relative; margin: 1.2rem 0;
+            }
+            .node::before {
+              content: ""; position: absolute; left: -1.1rem; top: 0.25rem;
+              width: 10px; height: 10px; border-radius: 999px; background: #fff; border: 2px solid #888;
+            }
+            .year { font-weight: 700; }
+          </style>
+
+          <h3>From Deming to Agile</h3>
+          <div class="timeline">
+            <div class="node fragment"><span class="year">1940s–50s</span>: Deming — Statistical Quality Control, PDCA</div>
+            <div class="node fragment"><span class="year">1950s–70s</span>: Toyota Production System — JIT, Kanban, Kaizen</div>
+            <div class="node fragment"><span class="year">1980s</span>: Total Quality Management — customer focus, CI</div>
+            <div class="node fragment"><span class="year">1984</span>: Theory of Constraints — bottlenecks, throughput</div>
+            <div class="node fragment"><span class="year">1990s</span>: Lean Manufacturing — value stream, waste reduction</div>
+            <div class="node fragment"><span class="year">1986–90s</span>: Six Sigma — DMAIC, defect reduction</div>
+            <div class="node fragment"><span class="year">2001</span>: Agile — Scrum, XP, Kanban, DevOps</div>
+          </div>
+        </section>
+            <section>Slide 1</section>
+            <section>Slide 2</section>
+        </div>
+    </div>
+    <script src="node_modules/reveal.js/dist/reveal.js"></script>
+    <script>
+        Reveal.initialize();
+    </script>
+</body>
+</html>
