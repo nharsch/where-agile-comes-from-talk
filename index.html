@@ -3,48 +3,147 @@
 <head>
     <link rel="stylesheet" href="node_modules/reveal.js/dist/reveal.css">
     <link rel="stylesheet" href="node_modules/reveal.js/dist/theme/black.css">
+    <style>
+      .timeline-sidebar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 20%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.8);
+        border-right: 2px solid #666;
+        padding: 2rem 1rem;
+        box-sizing: border-box;
+        z-index: 1000;
+      }
+      
+      .timeline {
+        position: relative;
+        padding-left: 2rem;
+        height: 100%;
+        overflow-y: auto;
+      }
+      
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 1rem;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: #666;
+      }
+      
+      .node {
+        position: relative;
+        margin: 2rem 0;
+        padding: 0.5rem;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+        opacity: 0.4;
+        font-size: 0.8rem;
+      }
+      
+      .node.active {
+        opacity: 1;
+        background: rgba(255, 255, 255, 0.1);
+        transform: translateX(5px);
+      }
+      
+      .node::before {
+        content: "";
+        position: absolute;
+        left: -1.6rem;
+        top: 0.6rem;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #666;
+        border: 2px solid #333;
+        transition: all 0.3s ease;
+      }
+      
+      .node.active::before {
+        background: #ff6b6b;
+        border-color: #ff6b6b;
+        width: 12px;
+        height: 12px;
+        left: -1.8rem;
+        top: 0.4rem;
+      }
+      
+      .year {
+        font-weight: 700;
+        color: #ff6b6b;
+        display: block;
+        margin-bottom: 0.25rem;
+      }
+      
+      .reveal .slides {
+        margin-left: 20%;
+        width: 80%;
+      }
+    </style>
 </head>
 <body>
+    <div class="timeline-sidebar">
+      <div class="timeline">
+        <div class="node" data-slide="0"><span class="year">1900s–40s</span>The Assembly Line</div>
+        <div class="node" data-slide="1"><span class="year">1940s–50s</span>Deming — Statistical Quality Control, PDCA</div>
+        <div class="node" data-slide="2"><span class="year">1950s–70s</span>Toyota Production System — JIT, Kanban, Kaizen</div>
+        <div class="node" data-slide="3"><span class="year">1980s</span>Total Quality Management — customer focus, CI</div>
+        <div class="node" data-slide="4"><span class="year">1984</span>Theory of Constraints — bottlenecks, throughput</div>
+        <div class="node" data-slide="5"><span class="year">1990s</span>Lean Manufacturing — value stream, waste reduction</div>
+        <div class="node" data-slide="6"><span class="year">1986–90s</span>Six Sigma — DMAIC, defect reduction</div>
+        <div class="node" data-slide="7"><span class="year">2001</span>Agile — Scrum, XP, Kanban, DevOps</div>
+      </div>
+    </div>
 
     <div class="reveal">
         <div class="slides">
-
-        <section>
-          <style>
-            .timeline {
-              position: relative; padding-left: 2.5rem;
-            }
-            .timeline::before {
-              content: ""; position: absolute; left: 1rem; top: 0; bottom: 0; width: 2px; background: #888;
-            }
-            .node {
-              position: relative; margin: 1.2rem 0;
-            }
-            .node::before {
-              content: ""; position: absolute; left: -1.1rem; top: 0.25rem;
-              width: 10px; height: 10px; border-radius: 999px; background: #fff; border: 2px solid #888;
-            }
-            .year { font-weight: 700; }
-          </style>
-
-          <h3>From Deming to Agile</h3>
-          <div class="timeline">
-            <div class="node fragment"><span class="year">1940s–50s</span>: Deming — Statistical Quality Control, PDCA</div>
-            <div class="node fragment"><span class="year">1950s–70s</span>: Toyota Production System — JIT, Kanban, Kaizen</div>
-            <div class="node fragment"><span class="year">1980s</span>: Total Quality Management — customer focus, CI</div>
-            <div class="node fragment"><span class="year">1984</span>: Theory of Constraints — bottlenecks, throughput</div>
-            <div class="node fragment"><span class="year">1990s</span>: Lean Manufacturing — value stream, waste reduction</div>
-            <div class="node fragment"><span class="year">1986–90s</span>: Six Sigma — DMAIC, defect reduction</div>
-            <div class="node fragment"><span class="year">2001</span>: Agile — Scrum, XP, Kanban, DevOps</div>
-          </div>
-        </section>
-            <section>Slide 1</section>
-            <section>Slide 2</section>
+          <section data-timeline="0">
+            <h3>Ford, the Assembly Line and Taylorism</h3>
+              <p>Ford</p>
+          </section>
+          <section data-timeline="1">
+              <h3>From Deming to Agile: Quality Foundations (1940s-50s)</h3>
+              <p>W. Edwards Deming introduced statistical quality control and the Plan-Do-Check-Act cycle, laying the groundwork for systematic improvement.</p>
+            </section>
+          <section data-timeline="2">
+            <h3>Toyota Production System (1950s-70s)</h3>
+            <p>Just-in-Time production, Kanban boards, and Kaizen continuous improvement revolutionized manufacturing.</p>
+          </section>
+          <section data-timeline="3">
+            <h3>Total Quality Management (1980s)</h3>
+            <p>Customer focus and continuous improvement became organizational imperatives.</p>
+          </section>
         </div>
     </div>
     <script src="node_modules/reveal.js/dist/reveal.js"></script>
     <script>
-        Reveal.initialize();
+        Reveal.initialize({
+          hash: true,
+          transition: 'slide'
+        });
+
+        Reveal.on('slidechanged', function(event) {
+          const currentSlide = event.indexh;
+          const timelineNodes = document.querySelectorAll('.timeline .node');
+          
+          timelineNodes.forEach(node => node.classList.remove('active'));
+          
+          const activeNode = document.querySelector(`.timeline .node[data-slide="${currentSlide}"]`);
+          if (activeNode) {
+            activeNode.classList.add('active');
+          }
+        });
+
+        Reveal.on('ready', function(event) {
+          const activeNode = document.querySelector('.timeline .node[data-slide="0"]');
+          if (activeNode) {
+            activeNode.classList.add('active');
+          }
+        });
     </script>
 </body>
 </html>
