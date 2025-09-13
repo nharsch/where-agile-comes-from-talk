@@ -3,7 +3,6 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Two Timelines Merging — Manufacturing → Software</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
 /* Styled after the GitLens commit graph */
@@ -26,56 +25,63 @@
 
 .circle-upper-right {
   top: 0px;
-  transform: translate(12px, -1px);
+  transform: translate(12px, -10px);
 }
+
+
 </style>
 </head>
 <body>
-    <!--
-    NOTE: To toggle light/dark mode, you may need to change the light/dark mode setting in your browser.
-    -->
-
-    <div class="min-h-screen bg-white dark:bg-slate-950 md:py-10">
-    <div class="container md:border-2 border-slate-200 dark:border-slate-800 rounded-lg px-7 pb-5 pt-12 mx-auto max-w-screen-md">
+    <div class="container
+                px-3
+                pt-5
+                ">
         <table class="table-fixed border-separate border-spacing-0 ms-2">
         <thead>
             <tr>
-            <th class="w-0 table-cell md:hidden"></th> <!-- Simplified git tree -->
-            <th class="w-[25px] hidden md:table-cell"></th> <!-- Commit branches 1-2 of full git tree -->
-            <th class="w-[25px] hidden md:table-cell"></th> <!-- Commit branches 2-3 of full git tree -->
+            <th class="w-[25px]"></th>
+            <th class="w-[25px]"></th>
             <th class="w-auto"></th> <!-- Text content -->
             </tr>
         </thead>
         <tbody>
             <tr class="relative h-12">
                 <td class="border-s-2 border-s-sky-300 dark:border-s-sky-300
-                           hidden md:table-cell">
-                    <div class="circle-component bg-white dark:bg-slate-950 circle-upper-left border-sky-300 dark:border-sky-300"></div>
+                           table-cell">
+                    <div class="circle-component bg-white dark:bg-slate-950
+                                circle-upper-left
+                                translate-x-[-11px]
+                                translate-y-[-9px]
+                                border-sky-300 dark:border-sky-300"></div>
                 </td>
-                <td class="hidden md:table-cell">
+                <td class="table-cell">
                 </td>
                 <td>
-                    <p class="relative -top-4 ps-6 text-sky-500">Bespoke manufacturing</p>
+                    <p class="relative -top-6 ps-6 text-sky-500">Bespoke manufacturing</p>
                 </td>
             </tr>
             <tr class="relative h-14">
                 <td class="border-s-2 border-s-sky-300 dark:border-s-sky-300
                            border-t-2 border-t-sky-300
-                           hidden md:table-cell">
-                    <div class="circle-component bg-white dark:bg-slate-950 circle-upper-left border-sky-300 dark:border-sky-300"></div>
+                           table-cell">
+                    <div class="circle-component bg-white dark:bg-slate-950
+                                circle-upper-left
+                                translate-x-[-11px]
+                                translate-y-[-9px]
+                                border-sky-300 dark:border-sky-300"></div>
                 </td>
                 <td class="border-l-2 border-l-sky-300
-                           dark:border-t-sky-900 hidden md:table-cell">
+                           dark:border-t-sky-900 table-cell">
                 </td>
                 <td>
-                    <p class="relative -top-5 ps-6 text-sky-500">Ford, Assembly Line, Taylorism</p>
+                    <p class="relative -top-7 ps-6 text-sky-500">Ford, Assembly Line, Taylorism</p>
                 </td>
             </tr>
             <tr class="relative h-12">
                 <td class="border-s-2
                            border-s-sky-300
                            dark:border-s-sky-300
-                           hidden md:table-cell">
+                           table-cell">
                 </td>
                 <td class="dark:border-s-orange-300
                            border-e-2
@@ -84,7 +90,7 @@
                            border-b-2 border-b-sky-300
                            rounded-bl-lg
                            dark:border-e-pink-300
-                           hidden md:table-cell">
+                           table-cell">
                     <div class="circle-component
                                 bg-white
                                 dark:bg-slate-950
@@ -93,85 +99,95 @@
                     </div>
                 </td>
                 <td>
-                    <p class="relative -top-4 ps-6 text-teal-500">Bespoke software</p>
+                    <p class="relative -top-6 ps-6 text-teal-500">Bespoke software</p>
                 </td>
             </tr>
             <tr class="relative h-14">
                 <td class="
                            border-s-2 border-s-sky-300 dark:border-s-sky-300
-                           hidden md:table-cell">
+                           table-cell">
                 </td>
                 <td class="
                            dark:border-s-orange-300
                            border-e-2 border-e-teal-300 dark:border-e-pink-300
-                           hidden md:table-cell">
-                    <div class="circle-component bg-white dark:bg-slate-950 circle-upper-right border-teal-300 dark:border-pink-300"></div>
+                           table-cell">
+                    <div class="circle-component bg-white dark:bg-slate-950
+                                circle-upper-right
+                                border-teal-300 dark:border-pink-300"></div>
                 </td>
                 <td>
-                    <p class="relative -top-5 ps-6 text-teal-500">Waterfall</p>
+                    <p class="relative -top-7 ps-6 text-teal-500">Waterfall</p>
                 </td>
             </tr>
             <tr class="relative h-14">
                 <td class="border-s-2 border-s-sky-300 dark:border-s-sky-300
-                           hidden md:table-cell">
-                    <div class="circle-component bg-white dark:bg-slate-950 circle-upper-left border-sky-300 dark:border-sky-300"></div>
+                           table-cell">
+                    <div class="circle-component bg-white dark:bg-slate-950
+                                circle-upper-left
+                                translate-x-[-11px]
+                                translate-y-[-9px]
+                                border-sky-300 dark:border-sky-300"></div>
                 </td>
                 <td class="border-r-2 border-r-teal-300
-                           dark:border-t-sky-900 hidden md:table-cell">
+                           dark:border-t-sky-900 table-cell">
                 </td>
                 <td>
-                    <p class="relative -top-5 ps-6 text-sky-500">Toyota Production System</p>
+                    <p class="relative -top-7 ps-6 text-sky-500">Toyota Production System</p>
                 </td>
             </tr>
             <tr class="relative h-14">
                 <td class="border-t-2 border-t-sky-300
-                           hidden md:table-cell">
-                    <div class="circle-component bg-white dark:bg-slate-950 circle-upper-left border-sky-300 dark:border-sky-300"></div>
+                           table-cell">
+                    <div class="circle-component bg-white dark:bg-slate-950
+                                circle-upper-left
+                                translate-x-[-11px]
+                                translate-y-[-9px]
+                                border-sky-300 dark:border-sky-300"></div>
                 </td>
                 <td class="border-r-2 border-r-teal-300
                            border-l-2 border-l-sky-300
                            border-b-2 border-b-sky-300
                            rounded-bl-lg
-                           dark:border-t-sky-900 hidden md:table-cell">
+                           dark:border-t-sky-900 table-cell">
                 </td>
                 <td>
-                    <p class="relative -top-5 ps-6 text-sky-500">Theory of Constraints</p>
+                    <p class="relative -top-6 ps-6 text-sky-500">Theory of Constraints</p>
                 </td>
             </tr>
             <tr class="relative h-12">
-                <td class="hidden md:table-cell">
+                <td class="table-cell">
                 </td>
                 <td class="dark:border-s-orange-300
                            border-e-2 border-e-teal-300
                            dark:border-e-pink-300
-                           hidden md:table-cell">
+                           table-cell">
                     <div class="circle-component bg-white dark:bg-slate-950 circle-upper-right border-teal-300 dark:border-pink-300"></div>
                 </td>
                 <td>
-                    <p class="relative -top-4 ps-6 text-teal-500">Agile</p>
+                    <p class="relative -top-6 ps-6 text-teal-500">Agile</p>
                 </td>
             </tr>
             <tr class="relative h-12">
-                <td class="dark:border-s-sky-300 hidden md:table-cell">
+                <td class="dark:border-s-sky-300 table-cell">
                 </td>
                 <td class="dark:border-s-orange-300
                            border-e-2 border-e-teal-300
-                           dark:border-e-pink-300 hidden md:table-cell">
+                           dark:border-e-pink-300 table-cell">
                     <div class="circle-component bg-white dark:bg-slate-950 circle-upper-right border-teal-300 dark:border-pink-300"></div>
                 </td>
                 <td>
-                    <p class="relative -top-4 ps-6 text-teal-500">Scrum</p>
+                    <p class="relative -top-6 ps-6 text-teal-500">Scrum</p>
                 </td>
             </tr>
             <tr class="relative h-12">
-                <td class="dark:border-s-sky-300 hidden md:table-cell">
+                <td class="dark:border-s-sky-300 table-cell">
                 </td>
                 <td class="dark:border-s-orange-300
-                           dark:border-e-pink-300 hidden md:table-cell">
+                           dark:border-e-pink-300 table-cell">
                     <div class="circle-component bg-white dark:bg-slate-950 circle-upper-right border-teal-300 dark:border-pink-300"></div>
                 </td>
                 <td>
-                    <p class="relative -top-4 ps-6 text-teal-500">DevOps</p>
+                    <p class="relative -top-6 ps-6 text-teal-500">DevOps</p>
                 </td>
             </tr>
         </tbody>
