@@ -3,6 +3,7 @@
 <head>
     <link rel="stylesheet" href="node_modules/reveal.js/dist/reveal.css">
     <link rel="stylesheet" href="node_modules/reveal.js/dist/theme/white.css">
+    <script src="node_modules/reveal.js/plugin/markdown/markdown.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Timeline styles -->
     <style>
@@ -237,8 +238,27 @@
         </tbody>
         </table>
     </div>
-    <div class="reveal">
-        <div class="slides">
+  <div class="reveal">
+    <div class="slides">
+      <section data-markdown>
+        <textarea data-template>
+          ### Why do we do what we do?
+          There's a lot of terms tossed around in software development
+          - Agile <!-- .element: class="fragment" -->
+          - Sprints <!-- .element: class="fragment" -->
+          - Scrum <!-- .element: class="fragment" -->
+          - Kanban <!-- .element: class="fragment" -->
+          - Lean <!-- .element: class="fragment" -->
+          - Continuous Delivery <!-- .element: class="fragment" -->
+          ---
+          ### Where do these terms come from?
+          And why do we use these tools?
+        </textarea>
+      </section>
+          <section data-timeline="-1">
+            <h3>But first, a History Lesson</h3>
+            <p class="fragment">this all starts in Manufacturing</p>
+          </section>
           <section data-timeline="0">
             <h3>Bespoke Manufacturing</h3>
             <p>Making em by hand</p>
@@ -250,10 +270,6 @@
           <section data-timeline="2">
               <h3>Taylorism</h3>
               <p>Measuring Movement</p>
-            </section>
-          <section data-timeline="3">
-              <h3>From Deming to Agile: Quality Foundations (1940s-50s)</h3>
-              <p>W. Edwards Deming introduced statistical quality control and the Plan-Do-Check-Act cycle, laying the groundwork for systematic improvement.</p>
             </section>
           <section data-timeline="4">
             <h3>Toyota Production System (1950s-70s)</h3>
@@ -298,7 +314,8 @@
           hash: true,
           transition: 'slide',
           margin: 0.2,
-          center: false
+          center: false,
+          plugins: [RevealMarkdown]
         });
 
         Reveal.on('slidechanged', function(event) {
