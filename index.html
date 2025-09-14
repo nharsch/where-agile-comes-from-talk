@@ -36,6 +36,24 @@
       justify-content: flex-start;
       align-items: flex-start;
     }
+
+    .timeline-label {
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .timeline-label.visible {
+      opacity: 1;
+    }
+
+    .timeline-container {
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .timeline-container.visible {
+      opacity: 1;
+    }
     </style>
 </head>
 <body>
@@ -47,7 +65,8 @@
                 top-0
                 left-0
                 z-0
-                pointer-events-none">
+                pointer-events-none
+                timeline-container">
         <table class="table-fixed border-separate border-spacing-0 ms-2">
         <thead>
             <tr>
@@ -57,7 +76,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr class="relative h-12">
+            <tr class="relative h-12 timeline-row">
                 <td class="border-s-2 border-s-sky-300 dark:border-s-sky-300
                            table-cell">
                     <div class="circle-component
@@ -69,11 +88,11 @@
                 </td>
                 <td class="table-cell">
                 </td>
-                <td>
+                <td class="timeline-label" data-timeline="0">
                     <p class="relative -top-6 ps-6 text-sky-500">Bespoke manufacturing</p>
                 </td>
             </tr>
-            <tr class="relative h-14">
+            <tr class="relative h-14 timeline-row">
                 <td class="border-s-2 border-s-sky-300 dark:border-s-sky-300
                            border-t-2 border-t-sky-300
                            table-cell">
@@ -87,11 +106,11 @@
                 <td class="border-l-2 border-l-sky-300
                            dark:border-t-sky-900 table-cell">
                 </td>
-                <td>
+                <td class="timeline-label" data-timeline="1">
                     <p class="relative -top-7 ps-6 text-sky-500">The Assembly Line</p>
                 </td>
             </tr>
-            <tr class="relative h-14">
+            <tr class="relative h-14 timeline-row">
                 <td class="border-s-2 border-s-sky-300 dark:border-s-sky-300
                            table-cell">
                     <div class="circle-component bg-white
@@ -103,11 +122,11 @@
                 <td class="border-l-2 border-l-sky-300
                            dark:border-t-sky-900 table-cell">
                 </td>
-                <td>
+                <td class="timeline-label" data-timeline="2">
                     <p class="relative -top-7 ps-6 text-sky-500">Taylorism</p>
                 </td>
             </tr>
-            <tr class="relative h-12">
+            <tr class="relative h-12 timeline-row">
                 <td class="border-s-2
                            border-s-sky-300
                            dark:border-s-sky-300
@@ -126,11 +145,11 @@
                                 ">
                     </div>
                 </td>
-                <td>
+                <td class="timeline-label" data-timeline="6">
                     <p class="relative -top-6 ps-6 text-teal-500">Bespoke software</p>
                 </td>
             </tr>
-            <tr class="relative h-14">
+            <tr class="relative h-14 timeline-row">
                 <td class="border-s-2 border-s-sky-300 dark:border-s-sky-300
                            table-cell">
                 </td>
@@ -140,11 +159,11 @@
                                 circle-upper-right
                                 border-teal-300"></div>
                 </td>
-                <td>
+                <td class="timeline-label" data-timeline="7">
                     <p class="relative -top-7 ps-6 text-teal-500">Waterfall</p>
                 </td>
             </tr>
-            <tr class="relative h-14">
+            <tr class="relative h-14 timeline-row">
                 <td class="border-s-2 border-s-sky-300 dark:border-s-sky-300
 
                            table-cell">
@@ -157,11 +176,11 @@
                 <td class="border-r-2 border-r-teal-300
                            dark:border-t-sky-900 table-cell">
                 </td>
-                <td>
+                <td class="timeline-label" data-timeline="4">
                     <p class="relative -top-7 ps-6 text-sky-500">TPS / Lean</p>
                 </td>
             </tr>
-            <tr class="relative h-14">
+            <tr class="relative h-14 timeline-row">
                 <td class="border-t-2 border-t-sky-300
                            table-cell">
                     <div class="circle-component bg-white
@@ -176,11 +195,11 @@
                            rounded-bl-lg
                            dark:border-t-sky-900 table-cell">
                 </td>
-                <td>
+                <td class="timeline-label" data-timeline="5">
                     <p class="relative -top-6 ps-6 text-sky-500">Theory of Constraints</p>
                 </td>
             </tr>
-            <tr class="relative h-12">
+            <tr class="relative h-12 timeline-row" data-timeline="5">
                 <td class="table-cell">
                 </td>
                 <td class="border-e-2 border-e-teal-300
@@ -188,11 +207,11 @@
                     <div class="circle-component bg-white
                                 circle-upper-right border-teal-300"></div>
                 </td>
-                <td>
+                <td class="timeline-label" data-timeline="8">
                     <p class="relative -top-6 ps-6 text-teal-500">Agile</p>
                 </td>
             </tr>
-            <tr class="relative h-12">
+            <tr class="relative h-12 timeline-row" data-timeline="6">
                 <td class="dark:border-s-sky-300 table-cell">
                 </td>
                 <td class="border-e-2 border-e-teal-300
@@ -200,18 +219,18 @@
                     <div class="circle-component bg-white
                                 circle-upper-right border-teal-300"></div>
                 </td>
-                <td>
+                <td class="timeline-label" data-timeline="9">
                     <p class="relative -top-6 ps-6 text-teal-500">Scrum</p>
                 </td>
             </tr>
-            <tr class="relative h-12">
+            <tr class="relative h-12 timeline-row">
                 <td class="dark:border-s-sky-300 table-cell">
                 </td>
                 <td class="table-cell">
                     <div class="circle-component bg-white
                                 circle-upper-right border-teal-300"></div>
                 </td>
-                <td>
+                <td class="timeline-label" data-timeline="10">
                     <p class="relative -top-6 ps-6 text-teal-500">DevOps</p>
                 </td>
             </tr>
@@ -241,8 +260,35 @@
             <p>Just-in-Time production, Kanban boards, and Kaizen continuous improvement revolutionized manufacturing.</p>
           </section>
           <section data-timeline="5">
-            <h3>Total Quality Management (1980s)</h3>
-            <p>Customer focus and continuous improvement became organizational imperatives.</p>
+            <h3>Theory of Constraints</h3>
+            <p>You're only as fast as your bottleneck</p>
+          </section>
+          <section>
+            <h3>The Software Story</h3>
+          </section>
+          <section data-timeline="6">
+            <h3>Bespoke Software</h3>
+            <p>punchcards</p>
+          </section>
+          <section data-timeline="7">
+            <h3>Waterfall</h3>
+            <p>Let's _pretend_ this is a factory</p>
+          </section>
+          <section data-timeline="8">
+            <h3>Agile</h3>
+            <p>Turns out, we don't know everything at the befinning</p>
+          </section>
+          <section data-timeline="9">
+            <h3>Scrum</h3>
+            <p>Turns out, we need to know _how_ to do agile</p>
+          </section>
+          <section data-timeline="10">
+            <h3>DevOps</h3>
+            <p>Let's fix IT while we're at it</p>
+          </section>
+          <section>
+            <h3>Ok, what's the point?</h3>
+            <p>Theory of Constraints, Lean production or the Toyota Production System, and Total Quality Management. Although each movement started in different places, they all agree on one thing: WIP is the silent killer. Therefore, one of the most critical mechanisms in the management of any plant is job and materials release. Without it, you can’t control WIP.”</p>
           </section>
         </div>
     </div>
@@ -256,23 +302,39 @@
         });
 
         Reveal.on('slidechanged', function(event) {
-          const currentSlide = event.indexh;
-          const timelineNodes = document.querySelectorAll('.timeline .node');
-          
-          timelineNodes.forEach(node => node.classList.remove('active'));
-          
-          const activeNode = document.querySelector(`.timeline .node[data-slide="${currentSlide}"]`);
-          if (activeNode) {
-            activeNode.classList.add('active');
-          }
+          updateTimelineVisibility();
         });
 
         Reveal.on('ready', function(event) {
-          const activeNode = document.querySelector('.timeline .node[data-slide="0"]');
-          if (activeNode) {
-            activeNode.classList.add('active');
-          }
+          updateTimelineVisibility();
         });
+
+        function updateTimelineVisibility() {
+          const currentSlideIndex = Reveal.getState().indexh;
+          const currentSlide = Reveal.getCurrentSlide();
+          const currentTimelineValue = currentSlide.getAttribute('data-timeline');
+          
+          const timelineContainer = document.querySelector('.timeline-container');
+          const timelineLabels = document.querySelectorAll('.timeline-label');
+          
+          // Hide/show entire timeline based on whether slide has data-timeline attribute
+          if (currentTimelineValue !== null) {
+            timelineContainer.classList.add('visible');
+          } else {
+            timelineContainer.classList.remove('visible');
+          }
+          
+          timelineLabels.forEach(label => {
+            label.classList.remove('visible');
+            
+            if (currentTimelineValue !== null) {
+              const labelTimelineValue = label.getAttribute('data-timeline');
+              if (labelTimelineValue !== null && parseInt(labelTimelineValue) <= parseInt(currentTimelineValue)) {
+                label.classList.add('visible');
+              }
+            }
+          });
+        }
     </script>
 </body>
 </html>
