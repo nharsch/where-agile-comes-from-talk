@@ -1,65 +1,65 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <link rel="stylesheet" href="node_modules/reveal.js/dist/reveal.css">
     <link rel="stylesheet" href="node_modules/reveal.js/dist/theme/white.css">
     <script src="node_modules/reveal.js/plugin/markdown/markdown.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Timeline styles -->
     <style>
-    /* Styled after the GitLens commit graph */
+      /* Styled after the GitLens commit graph */
 
-    .circle-component {
+      .circle-component {
       position: absolute;
       z-index: 40;
       height: 1.2rem;
       width: 1.2rem;
       border-radius: 9999px;
       border-width: 2px;
-    }
+      }
 
-    /* use the classes below together with .circle-component */
+      /* use the classes below together with .circle-component */
 
-    .circle-upper-left {
+      .circle-upper-left {
       top: 0px;
       transform: translate(-11px, -1px);
-    }
+      }
 
-    .circle-upper-right {
+      .circle-upper-right {
       top: 0px;
       transform: translate(12px, -10px);
-    }
+      }
 
-    .reveal .slides section {
+      .reveal .slides section {
       text-align: left;
       display: flex !important;
       flex-direction: column;
       justify-content: flex-start;
       align-items: flex-start;
-    }
+      }
 
-    .timeline-label {
+      .timeline-label {
       opacity: 0;
       transition: opacity 0.3s ease;
-    }
+      }
 
-    .timeline-label.visible {
+      .timeline-label.visible {
       opacity: 1;
-    }
+      }
 
-    .timeline-container {
+      .timeline-container {
       opacity: 0;
       transition: opacity 0.3s ease;
-    }
+      }
 
-    .timeline-container.visible {
+      .timeline-container.visible {
       opacity: 1;
-    }
+      }
     </style>
-</head>
-<body>
-  <!-- timeline -->
-  <div class="container
+  </head>
+  <body>
+    <!-- timeline -->
+    <div class="container
                 px-3
                 pt-5
                 fixed
@@ -68,290 +68,444 @@
                 z-0
                 pointer-events-none
                 timeline-container">
-        <table class="table-fixed border-separate border-spacing-0 ms-2">
+      <table class="table-fixed border-separate border-spacing-0 ms-2">
         <thead>
-            <tr>
+          <tr>
             <th class="w-[25px]"></th>
             <th class="w-[25px]"></th>
             <th class="w-auto"></th> <!-- Text content -->
-            </tr>
+          </tr>
         </thead>
         <tbody>
-            <tr class="relative h-12 timeline-row">
-                <td class="border-s-2 border-s-sky-300 dark:border-s-sky-300
-                           table-cell">
-                    <div class="circle-component
-                                bg-white
-                                circle-upper-left
-                                translate-x-[-11px]
-                                translate-y-[-9px]
-                                border-sky-300 dark:border-sky-300"></div>
-                </td>
-                <td class="table-cell">
-                </td>
-                <td class="timeline-label" data-timeline="0">
-                    <p class="relative -top-6 ps-6 text-sky-500">Bespoke manufacturing</p>
-                </td>
-            </tr>
-            <tr class="relative h-14 timeline-row">
-                <td class="border-s-2 border-s-sky-300 dark:border-s-sky-300
-                           border-t-2 border-t-sky-300
-                           table-cell">
-                    <div class="circle-component
-                                bg-white
-                                circle-upper-left
-                                translate-x-[-11px]
-                                translate-y-[-9px]
-                                border-sky-300 dark:border-sky-300"></div>
-                </td>
-                <td class="border-l-2 border-l-sky-300
-                           dark:border-t-sky-900 table-cell">
-                </td>
-                <td class="timeline-label" data-timeline="1">
-                    <p class="relative -top-7 ps-6 text-sky-500">The Assembly Line</p>
-                </td>
-            </tr>
-            <tr class="relative h-14 timeline-row">
-                <td class="border-s-2 border-s-sky-300 dark:border-s-sky-300
-                           table-cell">
-                    <div class="circle-component bg-white
-                                circle-upper-left
-                                translate-x-[-11px]
-                                translate-y-[-9px]
-                                border-sky-300 dark:border-sky-300"></div>
-                </td>
-                <td class="border-l-2 border-l-sky-300
-                           dark:border-t-sky-900 table-cell">
-                </td>
-                <td class="timeline-label" data-timeline="2">
-                    <p class="relative -top-7 ps-6 text-sky-500">Taylorism</p>
-                </td>
-            </tr>
-            <tr class="relative h-12 timeline-row">
-                <td class="border-s-2
-                           border-s-sky-300
-                           dark:border-s-sky-300
-                           table-cell">
-                </td>
-                <td class="border-e-2
-                           border-e-teal-300
-                           border-s-2 border-s-sky-300
-                           border-b-2 border-b-sky-300
-                           rounded-bl-lg
-                           table-cell">
-                    <div class="circle-component
-                                bg-white
-                                circle-upper-right
-                                border-teal-300
-                                ">
-                    </div>
-                </td>
-                <td class="timeline-label" data-timeline="6">
-                    <p class="relative -top-6 ps-6 text-teal-500">Bespoke software</p>
-                </td>
-            </tr>
-            <tr class="relative h-14 timeline-row">
-                <td class="border-s-2 border-s-sky-300 dark:border-s-sky-300
-                           table-cell">
-                </td>
-                <td class="border-e-2 border-e-teal-300
-                           table-cell">
-                    <div class="circle-component bg-white
-                                circle-upper-right
-                                border-teal-300"></div>
-                </td>
-                <td class="timeline-label" data-timeline="7">
-                    <p class="relative -top-7 ps-6 text-teal-500">Waterfall</p>
-                </td>
-            </tr>
-            <tr class="relative h-14 timeline-row">
-                <td class="border-s-2 border-s-sky-300 dark:border-s-sky-300
+          <tr class="relative h-12 timeline-row">
+            <td class="border-s-2 border-s-sky-300 dark:border-s-sky-300
+                       table-cell">
+              <div class="circle-component
+                          bg-white
+                          circle-upper-left
+                          translate-x-[-11px]
+                          translate-y-[-9px]
+                          border-sky-300 dark:border-sky-300"></div>
+            </td>
+            <td class="table-cell">
+            </td>
+            <td class="timeline-label" data-timeline="0">
+              <p class="relative -top-6 ps-6 text-sky-500">Bespoke manufacturing</p>
+            </td>
+          </tr>
+          <tr class="relative h-14 timeline-row">
+            <td class="border-s-2 border-s-sky-300 dark:border-s-sky-300
+                       border-t-2 border-t-sky-300
+                       table-cell">
+              <div class="circle-component
+                          bg-white
+                          circle-upper-left
+                          translate-x-[-11px]
+                          translate-y-[-9px]
+                          border-sky-300 dark:border-sky-300"></div>
+            </td>
+            <td class="border-l-2 border-l-sky-300
+                       dark:border-t-sky-900 table-cell">
+            </td>
+            <td class="timeline-label" data-timeline="1">
+              <p class="relative -top-7 ps-6 text-sky-500">The Assembly Line</p>
+            </td>
+          </tr>
+          <tr class="relative h-14 timeline-row">
+            <td class="border-s-2 border-s-sky-300 dark:border-s-sky-300
+                       table-cell">
+              <div class="circle-component bg-white
+                          circle-upper-left
+                          translate-x-[-11px]
+                          translate-y-[-9px]
+                          border-sky-300 dark:border-sky-300"></div>
+            </td>
+            <td class="border-l-2 border-l-sky-300
+                       dark:border-t-sky-900 table-cell">
+            </td>
+            <td class="timeline-label" data-timeline="2">
+              <p class="relative -top-7 ps-6 text-sky-500">Taylorism</p>
+            </td>
+          </tr>
+          <tr class="relative h-12 timeline-row">
+            <td class="border-s-2
+                       border-s-sky-300
+                       dark:border-s-sky-300
+                       table-cell">
+            </td>
+            <td class="border-e-2
+                       border-e-teal-300
+                       border-s-2 border-s-sky-300
+                       border-b-2 border-b-sky-300
+                       rounded-bl-lg
+                       table-cell">
+              <div class="circle-component
+                          bg-white
+                          circle-upper-right
+                          border-teal-300
+                          ">
+              </div>
+            </td>
+            <td class="timeline-label" data-timeline="6">
+              <p class="relative -top-6 ps-6 text-teal-500">Bespoke software</p>
+            </td>
+          </tr>
+          <tr class="relative h-14 timeline-row">
+            <td class="border-s-2 border-s-sky-300 dark:border-s-sky-300
+                       table-cell">
+            </td>
+            <td class="border-e-2 border-e-teal-300
+                       table-cell">
+              <div class="circle-component bg-white
+                          circle-upper-right
+                          border-teal-300"></div>
+            </td>
+            <td class="timeline-label" data-timeline="7">
+              <p class="relative -top-7 ps-6 text-teal-500">Waterfall</p>
+            </td>
+          </tr>
+          <tr class="relative h-14 timeline-row">
+            <td class="border-s-2 border-s-sky-300 dark:border-s-sky-300
 
-                           table-cell">
-                    <div class="circle-component bg-white
-                                circle-upper-left
-                                translate-x-[-11px]
-                                translate-y-[-9px]
-                                border-sky-300 dark:border-sky-300"></div>
-                </td>
-                <td class="border-r-2 border-r-teal-300
-                           dark:border-t-sky-900 table-cell">
-                </td>
-                <td class="timeline-label" data-timeline="4">
-                    <p class="relative -top-7 ps-6 text-sky-500">TPS / Lean</p>
-                </td>
-            </tr>
-            <tr class="relative h-14 timeline-row">
-                <td class="border-t-2 border-t-sky-300
-                           table-cell">
-                    <div class="circle-component bg-white
-                                circle-upper-left
-                                translate-x-[-11px]
-                                translate-y-[-9px]
-                                border-sky-300 dark:border-sky-300"></div>
-                </td>
-                <td class="border-r-2 border-r-teal-300
-                           border-l-2 border-l-sky-300
-                           border-b-2 border-b-sky-300
-                           rounded-bl-lg
-                           dark:border-t-sky-900 table-cell">
-                </td>
-                <td class="timeline-label" data-timeline="5">
-                    <p class="relative -top-6 ps-6 text-sky-500">Theory of Constraints</p>
-                </td>
-            </tr>
-            <tr class="relative h-12 timeline-row" data-timeline="5">
-                <td class="table-cell">
-                </td>
-                <td class="border-e-2 border-e-teal-300
-                           table-cell">
-                    <div class="circle-component bg-white
-                                circle-upper-right border-teal-300"></div>
-                </td>
-                <td class="timeline-label" data-timeline="8">
-                    <p class="relative -top-6 ps-6 text-teal-500">Agile</p>
-                </td>
-            </tr>
-            <tr class="relative h-12 timeline-row" data-timeline="6">
-                <td class="dark:border-s-sky-300 table-cell">
-                </td>
-                <td class="border-e-2 border-e-teal-300
-                           table-cell">
-                    <div class="circle-component bg-white
-                                circle-upper-right border-teal-300"></div>
-                </td>
-                <td class="timeline-label" data-timeline="9">
-                    <p class="relative -top-6 ps-6 text-teal-500">Scrum</p>
-                </td>
-            </tr>
-            <tr class="relative h-12 timeline-row">
-                <td class="dark:border-s-sky-300 table-cell">
-                </td>
-                <td class="table-cell">
-                    <div class="circle-component bg-white
-                                circle-upper-right border-teal-300"></div>
-                </td>
-                <td class="timeline-label" data-timeline="10">
-                    <p class="relative -top-6 ps-6 text-teal-500">DevOps</p>
-                </td>
-            </tr>
+                       table-cell">
+              <div class="circle-component bg-white
+                          circle-upper-left
+                          translate-x-[-11px]
+                          translate-y-[-9px]
+                          border-sky-300 dark:border-sky-300"></div>
+            </td>
+            <td class="border-r-2 border-r-teal-300
+                       dark:border-t-sky-900 table-cell">
+            </td>
+            <td class="timeline-label" data-timeline="4">
+              <p class="relative -top-7 ps-6 text-sky-500">TPS / Lean</p>
+            </td>
+          </tr>
+          <tr class="relative h-14 timeline-row">
+            <td class="border-t-2 border-t-sky-300
+                       table-cell">
+              <div class="circle-component bg-white
+                          circle-upper-left
+                          translate-x-[-11px]
+                          translate-y-[-9px]
+                          border-sky-300 dark:border-sky-300"></div>
+            </td>
+            <td class="border-r-2 border-r-teal-300
+                       border-l-2 border-l-sky-300
+                       border-b-2 border-b-sky-300
+                       rounded-bl-lg
+                       dark:border-t-sky-900 table-cell">
+            </td>
+            <td class="timeline-label" data-timeline="5">
+              <p class="relative -top-6 ps-6 text-sky-500">Theory of Constraints</p>
+            </td>
+          </tr>
+          <tr class="relative h-12 timeline-row" data-timeline="5">
+            <td class="table-cell">
+            </td>
+            <td class="border-e-2 border-e-teal-300
+                       table-cell">
+              <div class="circle-component bg-white
+                          circle-upper-right border-teal-300"></div>
+            </td>
+            <td class="timeline-label" data-timeline="8">
+              <p class="relative -top-6 ps-6 text-teal-500">Agile</p>
+            </td>
+          </tr>
+          <tr class="relative h-12 timeline-row" data-timeline="6">
+            <td class="dark:border-s-sky-300 table-cell">
+            </td>
+            <td class="border-e-2 border-e-teal-300
+                       table-cell">
+              <div class="circle-component bg-white
+                          circle-upper-right border-teal-300"></div>
+            </td>
+            <td class="timeline-label" data-timeline="9">
+              <p class="relative -top-6 ps-6 text-teal-500">Scrum</p>
+            </td>
+          </tr>
+          <tr class="relative h-12 timeline-row">
+            <td class="dark:border-s-sky-300 table-cell">
+            </td>
+            <td class="table-cell">
+              <div class="circle-component bg-white
+                          circle-upper-right border-teal-300"></div>
+            </td>
+            <td class="timeline-label" data-timeline="10">
+              <p class="relative -top-6 ps-6 text-teal-500">DevOps</p>
+            </td>
+          </tr>
         </tbody>
-        </table>
+      </table>
     </div>
-  <div class="reveal">
-    <div class="slides">
-      <section data-markdown>
-        <textarea data-template>
-          ### Why do we do what we do?
-          There's a lot of terms tossed around in software development
-          - Agile <!-- .element: class="fragment" -->
-          - Sprints <!-- .element: class="fragment" -->
-          - Scrum <!-- .element: class="fragment" -->
-          - Kanban <!-- .element: class="fragment" -->
-          - Lean <!-- .element: class="fragment" -->
-          - Continuous Delivery <!-- .element: class="fragment" -->
-          ---
-          ### Where do these terms come from?
-          And why do we use these tools?
-        </textarea>
-      </section>
-          <section data-timeline="-1">
-            <h3>But first, a History Lesson</h3>
-            <p class="fragment">this all starts in Manufacturing</p>
-          </section>
-          <section data-timeline="0">
-            <h3>Bespoke Manufacturing</h3>
-            <p>Making em by hand</p>
-          </section>
-          <section data-timeline="1">
-            <h3>Ford and the Assembly Line</h3>
-            <p>Making a lot of something</p>
-          </section>
-          <section data-timeline="2">
-              <h3>Taylorism</h3>
-              <p>Measuring Movement</p>
-            </section>
-          <section data-timeline="4">
-            <h3>Toyota Production System (1950s-70s)</h3>
-            <p>Just-in-Time production, Kanban boards, and Kaizen continuous improvement revolutionized manufacturing.</p>
-          </section>
-          <section data-timeline="5">
-            <h3>Theory of Constraints</h3>
-            <p>You're only as fast as your bottleneck</p>
-          </section>
-          <section>
-            <h3>The Software Story</h3>
-          </section>
-          <section data-timeline="6">
-            <h3>Bespoke Software</h3>
-            <p>punchcards</p>
-          </section>
-          <section data-timeline="7">
-            <h3>Waterfall</h3>
-            <p>Let's _pretend_ this is a factory</p>
-          </section>
-          <section data-timeline="8">
-            <h3>Agile</h3>
-            <p>Turns out, we don't know everything at the befinning</p>
-          </section>
-          <section data-timeline="9">
-            <h3>Scrum</h3>
-            <p>Turns out, we need to know _how_ to do agile</p>
-          </section>
-          <section data-timeline="10">
-            <h3>DevOps</h3>
-            <p>Let's fix IT while we're at it</p>
-          </section>
-          <section>
-            <h3>Ok, what's the point?</h3>
-            <p>Theory of Constraints, Lean production or the Toyota Production System, and Total Quality Management. Although each movement started in different places, they all agree on one thing: WIP is the silent killer. Therefore, one of the most critical mechanisms in the management of any plant is job and materials release. Without it, you can’t control WIP.”</p>
-          </section>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown>
+          <textarea data-template>
+            ### Why do we do what we do?
+            ---
+            There's a lot of terms tossed around in software development
+            - Sprints <!-- .element: class="fragment" -->
+            - Agile <!-- .element: class="fragment" -->
+            - Scrum <!-- .element: class="fragment" -->
+            - Kanban <!-- .element: class="fragment" -->
+            - Lean <!-- .element: class="fragment" -->
+            - WIP <!-- .element: class="fragment" -->
+            - Continuous Delivery <!-- .element: class="fragment" -->
+            ---
+            ### Where do these terms come from?
+            And why do we do them? <!-- .element: class="fragment" -->
+            ---
+            ### But first: a brief history of manufacturing
+          </textarea>
+        </section>
+        <section data-timeline="0" data-markdown>
+          <textarea data-template>
+            ### Bespoke Manufacturing
+            **manufacture** _verb_
+
+            From Latin:
+            - _manus_ = “hand”
+            - _facere_ = “to make” or “to do”
+
+            So, manufacture originally meant “to make by hand"
+          </textarea>
+        </section>
+        <section data-timeline="0">
+          <p>The Oldsmobile Curved Dash, the best selling car before the Ford Model T. These were "mass manufactured" by hand.</p>
+          <img src="/assets/oldesmobile-curved-dash.png" style="width: 60%"/>
+          <p class="fragment">These cost the equivalent of $22k USD</p>
+        </section>
+        <section data-timeline="1">
+          <h3>Ford and the Assembly Line</h3>
+          <p>The Ford Model T.</p>
+          <img src="/assets/ford-model-t.png" style="width: 60%"/>
+          <p class="fragment">These evenutally cost the equivalent of $4.5k USD</p>
+          <p class="fragment">How?</p>
+        </section>
+        <section data-timeline="1">
+          <h3>The Assembly Line</h3>
+          <img src="/assets/assembly-line.png" style="width: 60%" />
+          <p style="font-size: 0.6em" class="fragment">Products move through discrete steps</p>
+          <p style="font-size: 0.5em">
+            <span class="fragment">assemble chasis -></span>
+            <span class="fragment">install suspension -></span>
+            <span class="fragment">install engine -></span>
+            <span class="fragment">add body -></span>
+            <span class="fragment">add wheels</span>
+          </p>
+        </section>
+        <section data-timeline="1" data-markdown>
+          <textarea data-template>
+            ### Benefits of the Assembly Line
+            - Continuous Flow  <!-- .element: class="fragment" -->
+            - products move to the worker, no time wasted walking around or fetching parts
+            - Allows Faster output <!-- .element: class="fragment" -->
+            - each worker repeats a smaller task
+            - Model T's production time fell from ~12 hours to ~90 minutes
+            - Standardization <!-- .element: class="fragment" -->
+            - of parts
+            - of processes
+            - of tools
+            - Scalability <!-- .element: class="fragment" -->
+            - easier to add materials and labor
+          </textarea>
+        </section>
+        <section data-timeline="2">
+          <h3>Taylorism and Scientific Management</h3>
+          <p>Time and Motion Studies</p>
+          <div style="display: flex; flex-direction: row">
+            <img src="/assets/time-and-motion.jpg" style="flex: 1"/>
+            <ol style="flex: 1; padding: 20px">
+              <li class="fragment">Conduct a Method Study</li>
+              <li class="fragment">Standardize Process and Procedure</li>
+              <li class="fragment">Conduct a Time Study</li>
+              <li class="fragment">Establish a Time Standard</li>
+              <li class="fragment">Monitor and Evaluate Changes</li>
+    </ul>
+    </div>
+    </section>
+    <section data-timeline="2">
+    <h3>Problems In Early Industry</h3>
+    <div style="display: flex; flex-direction: row">
+        <ul>
+        <li class="fragment">dependent on forecasting sales</li>
+        <li class="fragment">overproduction and excess inventory</li>
+        <li class="fragment">long lead times</li>
+        <li class="fragment">defects discovered late</li>
+        <li class="fragment">worker disempowerment</li>
+        <li class="fragment">inflexible</li>
+        </ul>
+    </div>
+    </section>
+    <section data-timeline="4">
+    <h3>Toyota Production System</h3>
+    <p class="fragment">AKA TPS</p>
+    <img class="fragment" src="/assets/tps-reports.webp">
+    </section>
+    <section data-timeline="4">
+    <h3>Toyota Production System</h3>
+    <div style="display: flex; flex-direction: row; justify-content: space-between; width: 80%">
+        <div style="margin: 20px">
+        <img src="/assets/deming.webp" style="height: 250px"/>
+        <p>W. Edwards Deming</p>
+        <ul class="fragment">
+            <li>Goes to Japan to help rebuild</li>
+            <li>Gives lectures on Statistical Process Control</li>
+        </ul>
+        </div>
+        <div style="margin: 20px">
+        <img src="/assets/taiichi_ohno.jpg" style="height: 250px" />
+        <p>Taiichi Ohno</p>
+        <ul class="fragment">
+            <li>Head of Toyota</li>
+            <li>Uses Deming's ideas to create Toyota Production System</li>
+        </ul>
         </div>
     </div>
-    <script src="node_modules/reveal.js/dist/reveal.js"></script>
-    <script>
-        Reveal.initialize({
-          hash: true,
-          transition: 'slide',
-          margin: 0.2,
-          center: false,
-          plugins: [RevealMarkdown]
-        });
+    </section>
+    <section data-timeline="4" data-markdown>
+        <textarea data-template>
+            ### Toyota Production System
+            #### What's the difference?
+            - focus on <!-- .element: class="fragment" --> _flow_ <!-- .element: class="fragment" --> vs _efficiency_ <!-- .element: class="fragment" -->
+            ---
+            #### Just in Time
+            - pull based system
+            - orders move requests from right to left
+            - Produce only what's needed, when its needed
+            ![](/assets/push-vs-pull.png)
+            ---
+            #### Kanban
+            - cards were used to send inventory requests from right to left
+            - cards were also used on a board so show overall flow of work
+            - could easily visualize bottlenecks
+        </textarea>
+    </section>
+    <section data-timeline="4">
+        <img src="/assets/kanban-physical.jpg" / style="width: 100%">
+    </section>
+    <section data-timeline="4" data-markdown>
+      <textarea data-template>
+      #### Kanban boards on the factory floor
+      - Every part or container had a card (“kanban”).
+          - The card carried info: part number, quantity, origin, destination.
+          - When a bin was emptied, the card was removed and sent upstream.
+          - This card was literally the authorization to produce or move another batch.
+      </textarea>
+    </section>
+    <section data-timeline="4">
+        <img src="/assets/kanban-board-factory.webp" / style="width: 100%">
+    </section>
+    <section data-timeline="4" data-markdown>
+      <textarea data-template>
+        #### Kanban boards on the factory floor
+        - The board was a control center.
+        - Cards were slotted into columns/rows representing time slots, machines, or workstations.
+        - At a glance, managers and workers could see:
+        - What’s in progress.
+        - What’s ready to be started.
+        - What’s missing or delayed.
+        ---
+        #### Jidoka
+        Automation with a human touch
+        1. Detect abnormalities immediately.
+        2. Stop the process when a defect is found.
+        3. Fix the problem at the root before resuming.
+        4. Empower people and machines to ensure defects don’t flow downstream
+        ---
+        An Andon cord
+        ![](/assets/andon-cord.png)
+        Any worker can "stop the line"
+        ---
+        #### Kaizen
+        - culture constant improvement
+        - every worker encouraged to suggest and implement small improvements
+        ---
+        ### US Struggles to Compete
+        - Japanese auto manufacturers start to outperform US automakers
+        - 70s Oil Crisis
+        - US rediscovers Deming, who writes "Out of the Crisis"
+        - Repackages TPS as "Lean" Manufacturing
+      </textarea>
+    </section>
+    <section data-timeline="5">
+    <h3>Theory of Constraints</h3>
+    <p>You're only as fast as your bottleneck</p>
+    </section>
+    <section>
+    <h3>The Software Story</h3>
+    </section>
+    <section data-timeline="6">
+    <h3>Bespoke Software</h3>
+    <p>punchcards</p>
+    </section>
+    <section data-timeline="7">
+    <h3>Waterfall</h3>
+    <p>Let's _pretend_ this is a factory</p>
+    </section>
+    <section data-timeline="8">
+    <h3>Agile</h3>
+    <p>Turns out, we don't know everything at the befinning</p>
+    </section>
+    <section data-timeline="9">
+    <h3>Scrum</h3>
+    <p>Turns out, we need to know _how_ to do agile</p>
+    </section>
+    <section data-timeline="10">
+    <h3>DevOps</h3>
+    <p>Let's fix IT while we're at it</p>
+    </section>
+    <section>
+    <h3>Ok, what's the point?</h3>
+    <p>Theory of Constraints, Lean production or the Toyota Production System, and Total Quality Management. Although each movement started in different places, they all agree on one thing: WIP is the silent killer. Therefore, one of the most critical mechanisms in the management of any plant is job and materials release. Without it, you can’t control WIP.”</p>
+    </section>
+</div>
+</div>
+<script src="node_modules/reveal.js/dist/reveal.js"></script>
+<script>
+  Reveal.initialize({
+  hash: true,
+  transition: 'slide',
+  margin: 0.3,
+  // center: false,
+  plugins: [RevealMarkdown]
+  });
 
-        Reveal.on('slidechanged', function(event) {
-          updateTimelineVisibility();
-        });
+  Reveal.on('slidechanged', function(event) {
+  updateTimelineVisibility();
+  });
 
-        Reveal.on('ready', function(event) {
-          updateTimelineVisibility();
-        });
+  Reveal.on('ready', function(event) {
+  updateTimelineVisibility();
+  });
 
-        function updateTimelineVisibility() {
-          const currentSlideIndex = Reveal.getState().indexh;
-          const currentSlide = Reveal.getCurrentSlide();
-          const currentTimelineValue = currentSlide.getAttribute('data-timeline');
-          
-          const timelineContainer = document.querySelector('.timeline-container');
-          const timelineLabels = document.querySelectorAll('.timeline-label');
-          
-          // Hide/show entire timeline based on whether slide has data-timeline attribute
-          if (currentTimelineValue !== null) {
-            timelineContainer.classList.add('visible');
-          } else {
-            timelineContainer.classList.remove('visible');
-          }
-          
-          timelineLabels.forEach(label => {
-            label.classList.remove('visible');
-            
-            if (currentTimelineValue !== null) {
-              const labelTimelineValue = label.getAttribute('data-timeline');
-              if (labelTimelineValue !== null && parseInt(labelTimelineValue) <= parseInt(currentTimelineValue)) {
-                label.classList.add('visible');
-              }
-            }
-          });
-        }
-    </script>
+  function updateTimelineVisibility() {
+  const currentSlideIndex = Reveal.getState().indexh;
+  const currentSlide = Reveal.getCurrentSlide();
+  const currentTimelineValue = currentSlide.getAttribute('data-timeline');
+
+  const timelineContainer = document.querySelector('.timeline-container');
+  const timelineLabels = document.querySelectorAll('.timeline-label');
+
+  // Hide/show entire timeline based on whether slide has data-timeline attribute
+  if (currentTimelineValue !== null) {
+  timelineContainer.classList.add('visible');
+  } else {
+  timelineContainer.classList.remove('visible');
+  }
+
+  timelineLabels.forEach(label => {
+  label.classList.remove('visible');
+
+  if (currentTimelineValue !== null) {
+  const labelTimelineValue = label.getAttribute('data-timeline');
+  if (labelTimelineValue !== null && parseInt(labelTimelineValue) <= parseInt(currentTimelineValue)) {
+                                                                     label.classList.add('visible');
+                                                                     }
+                                                                     }
+                                                                     });
+                                                                     }
+                                                                     </script>
 </body>
 </html>
