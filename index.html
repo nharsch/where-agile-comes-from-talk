@@ -430,8 +430,104 @@
       </textarea>
     </section>
     <section data-timeline="5">
-    <h3>Theory of Constraints</h3>
-    <p>You're only as fast as your bottleneck</p>
+        <h3>Theory of Constraints</h3>
+        <p>You're only as fast as your bottleneck</p>
+        <div class="fragment">
+            <p>Developed by Eliyahu Goldratt in the 1980s</p>
+            <p>Popularized in his novel "The Goal" (1984)</p>
+            <img src="assets/the-goal.jpg">
+        </div>
+    </section>
+    <section data-timeline="5" data-markdown>
+      <textarea data-template>
+        ### Alex Rogo's Plant Crisis
+        - Plant manager with 3 months to turn around a failing factory <!-- .element: class="fragment" -->
+        - Despite running machines at 100% efficiency, they're losing money <!-- .element: class="fragment" -->
+        - Discovers the fundamental problem: <!-- .element: class="fragment" -->
+        - Local optimization ≠ Global optimization <!-- .element: class="fragment" -->
+        ---
+        ### The Hiking Boy Scout Analogy
+        - Troop hiking in single file
+        - Herbie (the slowest scout) determines the pace for everyone
+        - Moving faster scouts to the front doesn't help
+        - The constraint determines system performance
+        ---
+        ### The Five Focusing Steps
+        1. IDENTIFY the system constraint <!-- .element: class="fragment" -->
+        2. EXPLOIT the constraint <!-- .element: class="fragment" -->
+        3. SUBORDINATE everything else to the constraint <!-- .element: class="fragment" -->
+        4. ELEVATE the constraint <!-- .element: class="fragment" -->
+        5. REPEAT - Don't let inertia become the constraint <!-- .element: class="fragment" -->
+      </textarea>
+    </section>
+    <section data-timeline="5">
+      <h3>Find the Bottleneck</h3>
+      <div style="display: flex; align-items: center; justify-content: center; margin: 40px 0;">
+        <!-- Process Flow Visualization -->
+        <div style="display: flex; align-items: center; gap: 20px; font-family: monospace;">
+
+          <!-- Step 1: Cutting -->
+          <div style="text-align: center;">
+            <div style="background: #e8f4f8; border: 2px solid #3b82f6; border-radius: 8px; padding: 15px 20px; min-width: 120px;">
+              <div style="font-weight: bold; margin-bottom: 5px;">Cutting</div>
+              <div style="color: #3b82f6; font-size: 1.2em;">150/hr</div>
+            </div>
+          </div>
+
+          <!-- Arrow 1 -->
+          <div style="color: #6b7280; font-size: 1.5em;">→</div>
+
+          <!-- Step 2: Drilling -->
+          <div style="text-align: center;">
+            <div style="background: #e8f4f8; border: 2px solid #3b82f6; border-radius: 8px; padding: 15px 20px; min-width: 120px;">
+              <div style="font-weight: bold; margin-bottom: 5px;">Drilling</div>
+              <div style="color: #3b82f6; font-size: 1.2em;">80/hr</div>
+            </div>
+          </div>
+
+          <!-- Arrow 2 -->
+          <div style="color: #6b7280; font-size: 1.5em;">→</div>
+
+          <!-- Step 3: Assembly -->
+          <div style="text-align: center;">
+            <div style="background: #e8f4f8; border: 2px solid #3b82f6; border-radius: 8px; padding: 15px 20px; min-width: 120px;">
+              <div style="font-weight: bold; margin-bottom: 5px;">Assembly</div>
+              <div style="color: #3b82f6; font-size: 1.2em;">120/hr</div>
+            </div>
+          </div>
+
+          <!-- Arrow 3 -->
+          <div style="color: #6b7280; font-size: 1.5em;">→</div>
+
+          <!-- Step 4: Testing -->
+          <div style="text-align: center;">
+            <div style="background: #e8f4f8; border: 2px solid #3b82f6; border-radius: 8px; padding: 15px 20px; min-width: 120px;">
+              <div style="font-weight: bold; margin-bottom: 5px;">Testing</div>
+              <div style="color: #3b82f6; font-size: 1.2em;">200/hr</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="fragment" style="text-align: center; margin-top: 30px;">
+        <p style="font-size: 1.2em; color: #f59e0b; font-weight: bold;">
+          🎯 Drilling is the constraint at 80/hr
+        </p>
+        <p style="font-size: 0.9em; color: #6b7280;">
+          System throughput = 80 units/hour (not 150+120+200!)
+        </p>
+      </div>
+    </section>
+    <section data-markdown data-timeline="5">
+        <textarea data-template>
+        ### Key Metrics from The Goal
+        - **Throughput**: Rate at which system generates money through sales
+        - **Inventory**: Money invested in purchasing things to sell
+        - **Operating Expense**: Money spent turning inventory into throughput
+        
+        Goal: Increase throughput while reducing inventory and operating expense <!-- .element: class="fragment" -->
+      </textarea>
     </section>
     <section>
     <h3>The Software Story</h3>
