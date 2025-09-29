@@ -548,7 +548,7 @@
       </ul>
     </section>
     <section data-timeline="7">
-    <h3>Waterfall</h3>
+    <h2>Waterfall</h2>
     <p>Let's <em>pretend</em> this is a factory</p>
     </section>
     <section data-timeline="7" data-markdown>
@@ -584,21 +584,264 @@
         - **Waste**: Features built that customers don't actually want
       </textarea>
     </section>
-    <section data-timeline="8">
-    <h3>Agile</h3>
-    <p>Turns out, we don't know everything at the befinning</p>
+    <section data-timeline="8" data-markdown>
+      <textarea data-template>
+      ## Agile
+      Turns out, we don't know everything at the befinning
+
+      ### Agile Manifesto
+      - Individuals and Interactions > processes and tools
+      - Working Software > comprehensive documentation
+      - customer collaboration > contract negotiation
+      - responding to change > following a plan
+      - Not actually prescriptive
+      </textarea>
     </section>
-    <section data-timeline="9">
-    <h3>Scrum</h3>
-    <p>Turns out, we need to know _how_ to do agile</p>
+    <section data-timeline="9" data-markdown>
+      <textarea data-template>
+      ## Scrum
+      - Turns out, we need to know _how_ to do agile
+      - Based on Rugby
+      ![](/assets/scrum_rugby.jpg)
+      ---
+      - 3 Roles
+        - Product Owner
+          - Represents customer/client needs
+        - Scrum Master
+          - facilitator
+          - ensures flow
+          - removes blockers
+        - Developers
+          - doing the work
+          - not just programmers
+            - designers
+            - qa testers
+          - devs are _self organizing_
+      ### Scrum Events
+      - Sprint
+        - usually 2-4 weeks
+        - delivery _working_ product **increments**
+      - Sprint Planning
+        - kicks off the sprint
+        - Team decides _What can we deliver_ and _How will we do it_
+        - Creates a _sprint goal_
+        - selects items from product backlog that support that goal
+      ---
+      - Daily Scrum (Standup)
+        - Was meant to be had "standing up"
+        - 15 mins, same time every day
+        - talk about next steps and **blockers**
+        - **Not a status update for managers**
+      - Sprint Review
+        - end of sprint
+        - team show the **increment** to stakeholders
+        - collect feedback, update the product backlog
+      - Sprint Retrospective
+        - Final step
+        - team inspects itself: what went wrong? What can improve?
+      </textarea>
     </section>
-    <section data-timeline="10">
-    <h3>DevOps</h3>
-    <p>Let's fix IT while we're at it</p>
+    <section data-timeline="10" data-markdown>
+      <textarea data-template>
+      ## DevOps
+      Let's fix IT while we're at it
+      - Agile comes to IT
+      - Continuous Integration / Continuous Delivery
+      - Canary Releases / Feature Flag Deployments
+      - Automation and repeatability
+        - Infrastructure as Code
+        - Containerization
+      - Monitoring, Logging, Observability
+      </textarea>
     </section>
-    <section>
-    <h3>Ok, what's the point?</h3>
-    <p>Theory of Constraints, Lean production or the Toyota Production System, and Total Quality Management. Although each movement started in different places, they all agree on one thing: WIP is the silent killer. Therefore, one of the most critical mechanisms in the management of any plant is job and materials release. Without it, you can’t control WIP.”</p>
+    <section data-markdown>
+      <textarea data-template>
+      ## Ok, what's the point?
+      > Theory of Constraints, Lean production or the Toyota Production System... all agree on one thing: WIP is the silent killer.
+      > - The Pheonix Project
+
+      How do we minimize work in progress and maximize output?
+      ---
+      ### Three Ways
+        - First Way: Left to Right flow of work
+          - In order to maximize flow, we need small batch sizes and intervals of work, never passing defects to downstream
+        - Second Way: Fast Feedback
+          - Constant flow of fast feedback from right-to-left at all stages of value stream.
+        - The Third Way: Culture of experimentation
+          - Third way is about creating a culture that fosters two things: continual experimentation, which requires taking risks and learning from success and failure, and understanding that repetition and practice is the prerequisite to mastery.
+      ---
+      ### Flow
+      > Slow is smooth, smooth is fast
+      > - Motorcycle training saying
+      - work moves left to right
+      - minimize rework
+        - if work moves backwards, try to make it one step back
+      - Each step should _add value_
+      ---
+      ### Feedback
+        - Information flow right to left
+        - Fast feedback
+          - ideally, continuous
+        - Checklists
+          - Testing steps
+            - Should flow from the design!
+          - Configuration steps
+        - Data / Measurement
+          - We can only find constraints by _measuring_ work
+      ---
+      ### Culture
+        - Trust
+          - when people believe what you believe
+        - Culture is a set of shared
+          - values
+          - goals
+          - practices
+          - attitudes
+        - Implementing culture
+          - determine core values
+          - create goals
+          - create practices
+          - test all of them against attitudes
+      ---
+      ### Tools
+      - Tools are best for
+        - convergence of process
+        - collaboration of people
+      ---
+      ### Tools
+      #### Figma
+        - communicate the ask
+        - aids communication betwee designers, product owners and developers
+        - tightens feedback loop
+        - change tracking
+      ---
+      ### Tools
+      #### Ticketing system
+        - communicate the ask
+        - tracks workflow
+        - change tracking
+      ---
+      ### Tools
+      #### Whiteboards, diagrams
+        - same as Figma
+          - Figjam is great
+        - Excalidraw
+          - please try it
+        - aids in clarity
+        - communicate complex, details oriented subjects
+      ---
+      ### Tools
+      #### Git
+        - coordinates developer efforts
+        - tool for communication
+        - change tracking
+        - tool for directing the flow of work
+      ---
+      ### Tools
+      #### Metrics / Graphs
+        - communicate dense information
+        - make data intuitive
+        - change tracking
+      ---
+      ### Tools
+      #### Comms
+        - Slack, Teams, Email
+        - Meetings
+          - Meetings are about exchanging information
+            - someone should be _writing things down_
+          - OR making decisions
+            - someone should be **definitely** be _writing things down_
+          - OR About creating culture and flow
+      ---
+      ### Tools
+      Pizza / Drinks
+        - convergence of process  <!-- .element: class="fragment" -->
+        - collaboration of people <!-- .element: class="fragment" -->
+      ---
+      ## How do we know it's working?
+      > Efficiency is doing things right, effectiveness is doing the right thing
+      > - Peter Drucker
+      ---
+      ### Software Isn't Always Like Manufacturing
+      - There are no equally discrete _units_
+        - Tickets are not units
+        - Hours worked are not equal in value
+      ---
+      - _Value_ in software isn't always measurable
+        - Ideally, we make the Number Go Up
+          - But which one?
+            - Conversions?
+              - Put everything on sale all the time: less profit, degraded brand
+            - Site views?
+              - You can buy views, doesn't mean people will convert
+          - Site Performance?
+            - Faster is better
+            - But how much faster?
+              - Diminishing returns
+      - Judgement is still required
+        - Trust, but verify
+      ---
+      ### Bad Reasons to do Agile (or anything)
+      - Everybody else is doing it
+      - Because the tools you use were built for it
+      - We've been doing it up to this point
+      ---
+      ## Some ideas for us
+      Process improvements mostly on the Product Owners and Project Mangers
+      - Do faster sprint cadences
+        - increase throughput
+        - reduce "in queue" time for work
+      ---
+      - Use / improve tools for planning
+        - Agile board planning
+        - Improving metrics
+        - Better collaboration
+        - Better documentation
+      ---
+      - Rotate team members
+        - Every been given a task by someone and though: wow... you do _all this_?
+          - or: You do _that_ like... _this_?
+        - You or I might have a better way!
+        - This is how we share tools
+      ---
+      ### Culture and Tools
+      - this where _you_ come in
+      - Documentation
+        - Why does Mary know how everything works
+          - she asked someone
+          - she wrote it down
+            - in a place she can find it later
+        - Put information where _everyone_ on the team can find it later
+      ---
+      - Collaborative tools
+        - Any system that we don't _all_ have access to is a _constraint_
+        - Use tools with version control and/or change tracking
+      ---
+      - Unify / standardized inboxes
+        - All work gets a ticket
+          - because that's how we track work
+      ---
+      - Ask "Why"
+        - Why it's hard to ask why
+          - seems like resistance
+          - sounds like a pre-amble to a no
+        - Why is the guidance system for future decisions
+        - The answer can be dissapointing
+          - that's ok
+      ---
+      - Track time on our work
+        - only way to improve estimates
+        - only way to measure _actual_ throughput
+        - only way to detect _patterns_ of work
+        - Time spent does not equal value delivered
+      ---
+      - Unit Tests!
+        - they don't _all_ have to run in CI
+      - automated browser testing
+        - for testing features _that you are building_
+        - for regression testing
+
+      </textarea>
     </section>
 </div>
 </div>
