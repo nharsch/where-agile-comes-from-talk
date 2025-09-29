@@ -242,7 +242,8 @@
       <div class="slides">
         <section data-markdown>
           <textarea data-template>
-            ### Why do we do what we do?
+            ## What is Agile
+            and Why do we (try to) do it? <!-- .element: class="fragment" -->
             ---
             There's a lot of terms tossed around in software development
             - Sprints <!-- .element: class="fragment" -->
@@ -253,10 +254,10 @@
             - WIP <!-- .element: class="fragment" -->
             - Continuous Delivery <!-- .element: class="fragment" -->
             ---
-            ### Where do these terms come from?
-            And why do we do them? <!-- .element: class="fragment" -->
+            ### What do these words mean?
+            And where did they come from?
             ---
-            ### But first: a brief history of manufacturing
+            ### To explain, we'll need a brief history of auto manufacturing
           </textarea>
         </section>
         <section data-timeline="0" data-markdown>
@@ -277,7 +278,6 @@
           <p class="fragment">These cost the equivalent of $22k USD</p>
         </section>
         <section data-timeline="1">
-          <h3>Ford and the Assembly Line</h3>
           <p>The Ford Model T.</p>
           <img src="/assets/ford-model-t.png" style="width: 60%"/>
           <p class="fragment">These evenutally cost the equivalent of $4.5k USD</p>
@@ -298,21 +298,24 @@
         <section data-timeline="1" data-markdown>
           <textarea data-template>
             ### Benefits of the Assembly Line
-            - Continuous Flow  <!-- .element: class="fragment" -->
-            - products move to the worker, no time wasted walking around or fetching parts
-            - Allows Faster output <!-- .element: class="fragment" -->
-            - each worker repeats a smaller task
-            - Model T's production time fell from ~12 hours to ~90 minutes
-            - Standardization <!-- .element: class="fragment" -->
-            - of parts
-            - of processes
-            - of tools
-            - Scalability <!-- .element: class="fragment" -->
-            - easier to add materials and labor
+            - Products move to the worker
+              - no time wasted walking around or fetching parts
+              - each worker repeats a smaller task
+            - Standardization
+              - of parts
+              - of processes
+              - of tools
+            - Scalability
+              - easier to add materials and labor
+            - Allows Faster output
+              - Model T's production time fell from ~12 hours to ~90 minutes
+            - Continuous _Flow_
+              - value added at every step
           </textarea>
         </section>
         <section data-timeline="2">
           <h3>Taylorism and Scientific Management</h3>
+          <p>Focus on maximizing worker efficiency</p>
           <p>Time and Motion Studies</p>
           <div style="display: flex; flex-direction: row">
             <img src="/assets/time-and-motion.jpg" style="flex: 1"/>
@@ -329,12 +332,12 @@
     <h3>Problems In Early Industry</h3>
     <div style="display: flex; flex-direction: row">
         <ul>
-        <li class="fragment">dependent on forecasting sales</li>
-        <li class="fragment">overproduction and excess inventory</li>
-        <li class="fragment">long lead times</li>
-        <li class="fragment">defects discovered late</li>
-        <li class="fragment">worker disempowerment</li>
-        <li class="fragment">inflexible</li>
+          <li class="fragment">inflexible</li>
+          <li class="fragment">long lead times</li>
+          <li class="fragment">dependent on forecasting sales</li>
+          <li class="fragment">overproduction and excess inventory</li>
+          <li class="fragment">defects discovered late</li>
+          <li class="fragment">worker disempowerment</li>
         </ul>
     </div>
     </section>
@@ -344,16 +347,32 @@
     <img class="fragment" src="/assets/tps-reports.webp">
     </section>
     <section data-timeline="4">
-    <h3>Toyota Production System</h3>
+    <div style="display: flex; flex-direction: row; justify-content: space-between; width: 80%">
+        <div style="margin: 20px">
+        <img src="/assets/deming.webp" style="height: 250px"/>
+        <p>W. Edwards Deming</p>
+        </div>
+        <div style="margin: 20px">
+        <img src="/assets/taiichi_ohno.jpg" style="height: 250px" />
+        <p>Taiichi Ohno</p>
+        </div>
+    </div>
+    </section>
+    <section data-timeline="4">
     <div style="display: flex; flex-direction: row; justify-content: space-between; width: 80%">
         <div style="margin: 20px">
         <img src="/assets/deming.webp" style="height: 250px"/>
         <p>W. Edwards Deming</p>
         <ul class="fragment">
-            <li>Goes to Japan to help rebuild</li>
+            <li>Goes to Japan to help rebuild after the war</li>
             <li>Gives lectures on Statistical Process Control</li>
+            <li>SPC: Quality comes from improving the <em>system</em> instead of the workers / machines</li>
         </ul>
         </div>
+    </div>
+    </section>
+    <section data-timeline="4">
+    <div style="display: flex; flex-direction: row; justify-content: space-between; width: 80%">
         <div style="margin: 20px">
         <img src="/assets/taiichi_ohno.jpg" style="height: 250px" />
         <p>Taiichi Ohno</p>
@@ -368,7 +387,8 @@
         <textarea data-template>
             ### Toyota Production System
             #### What's the difference?
-            - focus on <!-- .element: class="fragment" --> _flow_ <!-- .element: class="fragment" --> vs _efficiency_ <!-- .element: class="fragment" -->
+            - focus on improving _flow_
+            - instead of just _efficiency_
             ---
             #### Just in Time
             - pull based system
@@ -385,28 +405,11 @@
     <section data-timeline="4">
         <img src="/assets/kanban-physical.jpg" / style="width: 100%">
     </section>
-    <section data-timeline="4" data-markdown>
-      <textarea data-template>
-      #### Kanban boards on the factory floor
-      - Every part or container had a card (“kanban”).
-          - The card carried info: part number, quantity, origin, destination.
-          - When a bin was emptied, the card was removed and sent upstream.
-          - This card was literally the authorization to produce or move another batch.
-      </textarea>
-    </section>
     <section data-timeline="4">
         <img src="/assets/kanban-board-factory.webp" / style="width: 100%">
     </section>
     <section data-timeline="4" data-markdown>
       <textarea data-template>
-        #### Kanban boards on the factory floor
-        - The board was a control center.
-        - Cards were slotted into columns/rows representing time slots, machines, or workstations.
-        - At a glance, managers and workers could see:
-        - What’s in progress.
-        - What’s ready to be started.
-        - What’s missing or delayed.
-        ---
         #### Jidoka
         Automation with a human touch
         1. Detect abnormalities immediately.
@@ -525,7 +528,6 @@
         - **Throughput**: Rate at which system generates money through sales
         - **Inventory**: Money invested in purchasing things to sell
         - **Operating Expense**: Money spent turning inventory into throughput
-        
         Goal: Increase throughput while reducing inventory and operating expense <!-- .element: class="fragment" -->
       </textarea>
     </section>
@@ -533,12 +535,54 @@
     <h3>The Software Story</h3>
     </section>
     <section data-timeline="6">
-    <h3>Bespoke Software</h3>
-    <p>punchcards</p>
+      <h3>Bespoke Software</h3>
+      <p>"Handmade" programs.</p>
+      <img src="/assets/punchcard.jpg" style="width: 60%"/>
+    </section>
+    <section data-timeline="6">
+      <ul>
+        <li>Programs were written for specific one off tasks</li>
+        <li class="fragment">Often written for specific machines</li>
+        <li class="fragment">Hard to divide work</li>
+        <img class="fragment" src="/assets/punchard-stack.webp" style="width: 60%"/>
+      </ul>
     </section>
     <section data-timeline="7">
     <h3>Waterfall</h3>
-    <p>Let's _pretend_ this is a factory</p>
+    <p>Let's <em>pretend</em> this is a factory</p>
+    </section>
+    <section data-timeline="7" data-markdown>
+      <textarea data-template>
+        ### The Waterfall Model
+        Inspired by traditional manufacturing and construction
+        
+        <span class="fragment">Requirements →</span>
+        <span class="fragment">Design →</span>
+        <span class="fragment">Implementation →</span>
+        <span class="fragment">Testing →</span>
+        <span class="fragment">Deployment →</span>
+        <span class="fragment">Maintenance</span>
+
+        Each phase must be completed before the next begins <!-- .element: class="fragment" -->
+        ---
+        ### Waterfall Principles
+        - **Sequential phases**: No going back once a phase is "complete"
+        - **Heavy documentation**: Detailed specs before coding
+        - **Big upfront design**: Plan everything in advance
+        - **Late testing**: Quality assurance at the end
+        - **Single delivery**: Ship the complete product once
+        ---
+        ### Waterfall got us to the Moon
+        ![](/assets/margaret-hamilton.jpg)
+        Margaret Hamilton, lead software engineer for the Apollo Guidance Computer
+        ---
+        ### Problems with Waterfall
+        - **Late feedback**: Customers see product only at the end
+        - **Inflexible**: Hard to change requirements mid-project
+        - **Risk concentration**: All integration happens at once
+        - **Long lead times**: Months or years before any working software
+        - **Waste**: Features built that customers don't actually want
+      </textarea>
     </section>
     <section data-timeline="8">
     <h3>Agile</h3>
