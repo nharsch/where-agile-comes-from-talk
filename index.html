@@ -10,19 +10,19 @@
       /* Styled after the GitLens commit graph */
 
       .circle-component {
-      position: absolute;
-      z-index: 40;
-      height: 1.2rem;
-      width: 1.2rem;
-      border-radius: 9999px;
-      border-width: 2px;
+        position: absolute;
+        z-index: 40;
+        height: 1.2rem;
+        width: 1.2rem;
+        border-radius: 9999px;
+        border-width: 2px;
       }
 
       /* use the classes below together with .circle-component */
 
       .circle-upper-left {
-      top: 0px;
-      transform: translate(-11px, -1px);
+        top: 0px;
+        transform: translate(-11px, -1px);
       }
 
       .circle-upper-right {
@@ -31,11 +31,13 @@
       }
 
       .reveal .slides section {
-      text-align: left;
-      display: flex !important;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: flex-start;
+        text-align: left;
+        display: flex !important;
+        font-size: 0.9em;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-left: 80px;
       }
 
       .timeline-label {
@@ -124,7 +126,7 @@
                        dark:border-t-sky-900 table-cell">
             </td>
             <td class="timeline-label" data-timeline="2">
-              <p class="relative -top-7 ps-6 text-sky-500">Taylorism</p>
+              <p class="relative -top-7 ps-6 text-sky-500">Scientific Management</p>
             </td>
           </tr>
           <tr class="relative h-12 timeline-row">
@@ -243,7 +245,7 @@
         <section data-markdown>
           <textarea data-template>
             ## What is Agile
-            and Why do we (try to) do it? <!-- .element: class="fragment" -->
+            and why do we (try to) do it? <!-- .element: class="fragment" -->
             ---
             There's a lot of terms tossed around in software development
             - Sprints <!-- .element: class="fragment" -->
@@ -251,7 +253,6 @@
             - Scrum <!-- .element: class="fragment" -->
             - Kanban <!-- .element: class="fragment" -->
             - Lean <!-- .element: class="fragment" -->
-            - WIP <!-- .element: class="fragment" -->
             - Continuous Delivery <!-- .element: class="fragment" -->
             ---
             ### What do these words mean?
@@ -314,26 +315,39 @@
           </textarea>
         </section>
         <section data-timeline="2">
-          <h3>Taylorism and Scientific Management</h3>
+          <h3>Scientific Management</h3>
           <p>Focus on maximizing worker efficiency</p>
           <p>Time and Motion Studies</p>
           <div style="display: flex; flex-direction: row">
             <img src="/assets/time-and-motion.jpg" style="flex: 1"/>
-            <ol style="flex: 1; padding: 20px">
-              <li class="fragment">Conduct a Method Study</li>
-              <li class="fragment">Standardize Process and Procedure</li>
-              <li class="fragment">Conduct a Time Study</li>
-              <li class="fragment">Establish a Time Standard</li>
-              <li class="fragment">Monitor and Evaluate Changes</li>
+            <ul style="flex: 1; padding: 20px">
+              <li class="fragment">Each worker should have a clearly defined task</li>
+              <li class="fragment">Each worker should be given standard tools</li>
+              <li class="fragment">Managers Monitor and Evaluate Changes</li>
+              <li class="fragment">Managers improves processes</li>
+            </ul>
     </ul>
     </div>
     </section>
     <section data-timeline="2">
-    <h3>Problems In Early Industry</h3>
-    <div style="display: flex; flex-direction: row">
+      <h3>Problems In Early Industry</h3>
+      <div style="display: flex; flex-direction: row">
+          <ul>
+            <li class="fragment">inflexible</li>
+            <img class="fragment" src="/assets/circles_now.jpg" />
+          </ul>
+      </div>
+    </section>
+    <section data-timeline="2">
+      <h3>Problems In Early Industry</h3>
+      <div style="display: flex; flex-direction: row">
         <ul>
-          <li class="fragment">inflexible</li>
-          <li class="fragment">long lead times</li>
+          <li>inflexible</li>
+          <li>long lead times
+            <ul>
+              <li class="fragment">high efficiency leads to inventory of WIP</li>
+            </ul>
+          </li>
           <li class="fragment">dependent on forecasting sales</li>
           <li class="fragment">overproduction and excess inventory</li>
           <li class="fragment">defects discovered late</li>
@@ -396,6 +410,20 @@
             - Produce only what's needed, when its needed
             ![](/assets/push-vs-pull.png)
             ---
+            #### How to improve flow?
+            - eliminate waste
+            - muda (無駄) = waste
+            - anything that doesn't add value to the customer
+            ---
+            #### 7 Wastes
+              1. Overproduction (making too much)
+              2. Waiting
+              3. Transporting
+              4. Inappropriate Processing (doing too much)
+              5. Unnecessary Inventory
+              6. Unnecessary/Excess Motion
+              7. Defects
+            ---
             #### Kanban
             - cards were used to send inventory requests from right to left
             - cards were also used on a board so show overall flow of work
@@ -415,18 +443,19 @@
         1. Detect abnormalities immediately.
         2. Stop the process when a defect is found.
         3. Fix the problem at the root before resuming.
-        4. Empower people and machines to ensure defects don’t flow downstream
+        4. Empower people to ensure defects don’t flow downstream
         ---
         An Andon cord
         ![](/assets/andon-cord.png)
         Any worker can "stop the line"
         ---
-        #### Kaizen
-        - culture constant improvement
-        - every worker encouraged to suggest and implement small improvements
+        ### Kaizen
+        - Continuous improvement
+        - Everyone is responsible for improving the process
+        - Small, incremental changes
         ---
-        ### US Struggles to Compete
-        - Japanese auto manufacturers start to outperform US automakers
+        ### TPS Impact
+        - Japanese auto manufacturers outperform US automakers
         - 70s Oil Crisis
         - US rediscovers Deming, who writes "Out of the Crisis"
         - Repackages TPS as "Lean" Manufacturing
@@ -436,8 +465,6 @@
         <h3>Theory of Constraints</h3>
         <p>You're only as fast as your bottleneck</p>
         <div class="fragment">
-            <p>Developed by Eliyahu Goldratt in the 1980s</p>
-            <p>Popularized in his novel "The Goal" (1984)</p>
             <img src="assets/the-goal.jpg">
         </div>
     </section>
@@ -448,19 +475,6 @@
         - Despite running machines at 100% efficiency, they're losing money <!-- .element: class="fragment" -->
         - Discovers the fundamental problem: <!-- .element: class="fragment" -->
         - Local optimization ≠ Global optimization <!-- .element: class="fragment" -->
-        ---
-        ### The Hiking Boy Scout Analogy
-        - Troop hiking in single file
-        - Herbie (the slowest scout) determines the pace for everyone
-        - Moving faster scouts to the front doesn't help
-        - The constraint determines system performance
-        ---
-        ### The Five Focusing Steps
-        1. IDENTIFY the system constraint <!-- .element: class="fragment" -->
-        2. EXPLOIT the constraint <!-- .element: class="fragment" -->
-        3. SUBORDINATE everything else to the constraint <!-- .element: class="fragment" -->
-        4. ELEVATE the constraint <!-- .element: class="fragment" -->
-        5. REPEAT - Don't let inertia become the constraint <!-- .element: class="fragment" -->
       </textarea>
     </section>
     <section data-timeline="5">
@@ -518,21 +532,13 @@
           🎯 Drilling is the constraint at 80/hr
         </p>
         <p style="font-size: 0.9em; color: #6b7280;">
-          System throughput = 80 units/hour (not 150+120+200!)
+          Max throughput = 80 units/hour
         </p>
       </div>
     </section>
-    <section data-markdown data-timeline="5">
-        <textarea data-template>
-        ### Key Metrics from The Goal
-        - **Throughput**: Rate at which system generates money through sales
-        - **Inventory**: Money invested in purchasing things to sell
-        - **Operating Expense**: Money spent turning inventory into throughput
-        Goal: Increase throughput while reducing inventory and operating expense <!-- .element: class="fragment" -->
-      </textarea>
-    </section>
     <section>
     <h3>The Software Story</h3>
+    <p>How does this relate to software?</p>
     </section>
     <section data-timeline="6">
       <h3>Bespoke Software</h3>
@@ -572,51 +578,66 @@
         - **Late testing**: Quality assurance at the end
         - **Single delivery**: Ship the complete product once
         ---
-        ### Waterfall got us to the Moon
         ![](/assets/margaret-hamilton.jpg)
-        Margaret Hamilton, lead software engineer for the Apollo Guidance Computer
+        Waterfall got us to the Moon (Margaret Hamilton, lead software engineer for the Apollo Guidance Computer)
         ---
         ### Problems with Waterfall
-        - **Late feedback**: Customers see product only at the end
         - **Inflexible**: Hard to change requirements mid-project
-        - **Risk concentration**: All integration happens at once
-        - **Long lead times**: Months or years before any working software
-        - **Waste**: Features built that customers don't actually want
+        - **Slow feedback loops**: testing happens late, bugs are expensive
+        - **One way communication**: requirements handed down from "the business" to developers
+        - **Big batches of work**: long development cycles, infrequent releases
+        ---
+        ### Problems with Waterfall
+        Many major projects failed
+        - Denver Airport baggage system
+        - FBI Virtual Case File
+        - UK NHS National Programme for IT
+      </textarea>
+    </section>
+
       </textarea>
     </section>
     <section data-timeline="8" data-markdown>
       <textarea data-template>
       ## Agile
-      Turns out, we don't know everything at the befinning
+      Turns out, we don't know everything at the beginning
 
+      Inspired by principles from Lean manufacturing
+      - small batch sizes <!-- .element: class="fragment" -->
+      - iterative development <!-- .element: class="fragment" -->
+      - continuous feedback <!-- .element: class="fragment" -->
+      - empowered teams <!-- .element: class="fragment" -->
+      ---
       ### Agile Manifesto
       - Individuals and Interactions > processes and tools
       - Working Software > comprehensive documentation
       - customer collaboration > contract negotiation
       - responding to change > following a plan
-      - Not actually prescriptive
+
+      Not actually prescriptive <!-- .element: class="fragment" -->
       </textarea>
     </section>
     <section data-timeline="9" data-markdown>
       <textarea data-template>
       ## Scrum
-      - Turns out, we need to know _how_ to do agile
+      - Turns out, we need to know _how_ to do Agile
       - Based on Rugby
       ![](/assets/scrum_rugby.jpg)
       ---
-      - 3 Roles
-        - Product Owner
-          - Represents customer/client needs
-        - Scrum Master
-          - facilitator
-          - ensures flow
-          - removes blockers
-        - Developers
-          - doing the work
-          - not just programmers
-            - designers
-            - qa testers
-          - devs are _self organizing_
+      ## Scrum Roles
+      - Product Owner
+        - Represents customer/client needs
+      - Scrum Master
+        - facilitator
+        - ensures flow
+        - removes blockers
+      - Developers
+        - doing the work
+        - not just programmers
+          - designers
+          - qa testers
+        - devs are _self organizing_
+      ---
       ### Scrum Events
       - Sprint
         - usually 2-4 weeks
@@ -626,6 +647,8 @@
         - Team decides _What can we deliver_ and _How will we do it_
         - Creates a _sprint goal_
         - selects items from product backlog that support that goal
+          - backlog is like "customer orders"
+        - Often use a Kanban board to track progress
       ---
       - Daily Scrum (Standup)
         - Was meant to be had "standing up"
@@ -639,6 +662,7 @@
       - Sprint Retrospective
         - Final step
         - team inspects itself: what went wrong? What can improve?
+          - Kaizen (continuous improvement)
       </textarea>
     </section>
     <section data-timeline="10" data-markdown>
@@ -652,134 +676,45 @@
         - Infrastructure as Code
         - Containerization
       - Monitoring, Logging, Observability
+
+      Book: _The Pheonix Project_ based on _The Goal_
       </textarea>
     </section>
     <section data-markdown>
       <textarea data-template>
       ## Ok, what's the point?
-      > Theory of Constraints, Lean production or the Toyota Production System... all agree on one thing: WIP is the silent killer.
-      > - The Pheonix Project
-
-      How do we minimize work in progress and maximize output?
       ---
-      ### Three Ways
-        - First Way: Left to Right flow of work
-          - In order to maximize flow, we need small batch sizes and intervals of work, never passing defects to downstream
-        - Second Way: Fast Feedback
-          - Constant flow of fast feedback from right-to-left at all stages of value stream.
-        - The Third Way: Culture of experimentation
-          - Third way is about creating a culture that fosters two things: continual experimentation, which requires taking risks and learning from success and failure, and understanding that repetition and practice is the prerequisite to mastery.
+      ### The Three Ways of DevOps
+      - First Way: Flow
+        - Left to Right flow of work
+        - Don't pass defects downstream
+        - Remove / improve bottlenecks
+        - Remove waste
+        - Slow is smooth, smooth is fast
       ---
-      ### Flow
-      > Slow is smooth, smooth is fast
-      > - Motorcycle training saying
-      - work moves left to right
-      - minimize rework
-        - if work moves backwards, try to make it one step back
-      - Each step should _add value_
-      ---
-      ### Feedback
-        - Information flow right to left
-        - Fast feedback
-          - ideally, continuous
-        - Checklists
-          - Testing steps
-            - Should flow from the design!
-          - Configuration steps
-        - Data / Measurement
-          - We can only find constraints by _measuring_ work
-      ---
-      ### Culture
-        - Trust
-          - when people believe what you believe
+      ### The Three Ways of DevOps
+      - Second Way: Fast Feedback
+        - Constant flow of fast feedback from right-to-left at all stages of value stream.
+      - The Third Way: Culture of experimentation and learning
+        - Trust: when people believe what you believe
         - Culture is a set of shared
           - values
           - goals
           - practices
           - attitudes
-        - Implementing culture
-          - determine core values
-          - create goals
-          - create practices
-          - test all of them against attitudes
       ---
-      ### Tools
-      - Tools are best for
-        - convergence of process
-        - collaboration of people
-      ---
-      ### Tools
-      #### Figma
-        - communicate the ask
-        - aids communication betwee designers, product owners and developers
-        - tightens feedback loop
-        - change tracking
-      ---
-      ### Tools
-      #### Ticketing system
-        - communicate the ask
-        - tracks workflow
-        - change tracking
-      ---
-      ### Tools
-      #### Whiteboards, diagrams
-        - same as Figma
-          - Figjam is great
-        - Excalidraw
-          - please try it
-        - aids in clarity
-        - communicate complex, details oriented subjects
-      ---
-      ### Tools
-      #### Git
-        - coordinates developer efforts
-        - tool for communication
-        - change tracking
-        - tool for directing the flow of work
-      ---
-      ### Tools
-      #### Metrics / Graphs
-        - communicate dense information
-        - make data intuitive
-        - change tracking
-      ---
-      ### Tools
-      #### Comms
-        - Slack, Teams, Email
-        - Meetings
-          - Meetings are about exchanging information
-            - someone should be _writing things down_
-          - OR making decisions
-            - someone should be **definitely** be _writing things down_
-          - OR About creating culture and flow
-      ---
-      ### Tools
-      Pizza / Drinks
-        - convergence of process  <!-- .element: class="fragment" -->
-        - collaboration of people <!-- .element: class="fragment" -->
-      ---
-      ## How do we know it's working?
-      > Efficiency is doing things right, effectiveness is doing the right thing
-      > - Peter Drucker
+      ## The Problems Agile doesn't solve
       ---
       ### Software Isn't Always Like Manufacturing
       - There are no equally discrete _units_
         - Tickets are not units
         - Hours worked are not equal in value
+        - _Value_ in software isn't always measurable
       ---
-      - _Value_ in software isn't always measurable
-        - Ideally, we make the Number Go Up
-          - But which one?
-            - Conversions?
-              - Put everything on sale all the time: less profit, degraded brand
-            - Site views?
-              - You can buy views, doesn't mean people will convert
-          - Site Performance?
-            - Faster is better
-            - But how much faster?
-              - Diminishing returns
-      - Judgement is still required
-        - Trust, but verify
+      ### Culture is Hard
+      - you need buy in from everyone
+      - trust is fragile
+      - blame is easy
       ---
       ### Bad Reasons to do Agile (or anything)
       - Everybody else is doing it
@@ -787,59 +722,120 @@
       - We've been doing it up to this point
       ---
       ## Some ideas for us
-      Process improvements mostly on the Product Owners and Project Mangers
+      - Tools are best for
+        - convergence of process
+        - collaboration of people
+      ---
+      ### Ideas for managers
       - Do faster sprint cadences
         - increase throughput
         - reduce "in queue" time for work
       ---
-      - Use / improve tools for planning
-        - Agile board planning
-        - Improving metrics
-        - Better collaboration
-        - Better documentation
+      ### Ideas for managers
+      Use the Ticketing system
+        - makes work visible
+        - track time on ticket
+        - communicate through time
+        - makes bottlenecks visible
+        - investigate burndown charts, time tracking, etc
       ---
-      - Rotate team members
+      ### Ideas for managers
+      Rotate team members
         - Every been given a task by someone and though: wow... you do _all this_?
           - or: You do _that_ like... _this_?
         - You or I might have a better way!
         - This is how we share tools
       ---
-      ### Culture and Tools
-      - this where _you_ come in
-      - Documentation
+      ### Ideas For Developers
+      Track time on our work
+        - only way to improve estimates
+        - only way to measure _actual_ throughput
+        - only way to detect _patterns_ of work
+        - Time spent does not equal value delivered
+      ---
+      ### Ideas For Developers
+      Build prototypes
+        - communicate ideas
+        - get feedback early
+        - fail fast, fail cheap
+        - vibecode it?
+      ---
+      ### Ideas For Developers
+      Improving testing
+        - are there standardized test steps in the ticket?
+        - should they be documented?
+        - can we think of an easy way to set up tests?
+        - Automated browser tests
+        - Storybook-like tools
+          - Test fixtures that users can use
+      ---
+      ### Ideas For Developers
+      Build bespoke tools
+      - autmoate repetitive tasks
+      - Example: Order Details link maker
+      ---
+      ### Ideas for all of us
+      Documentation
         - Why does Mary know how everything works
           - she asked someone
           - she wrote it down
             - in a place she can find it later
         - Put information where _everyone_ on the team can find it later
       ---
-      - Collaborative tools
+      ### Ideas for all of us
+      Use Whiteboards and diagrams
+        - communicate complex, detail oriented subjects
+          - aids in clarity
+        - get everyone (literally) on the same page
+        - Excalidraw
+          - please try it
+        - Figjam is great
+        - Mermaid.js
+        - Learn some basic diagramming
+          - flow charts
+          - timelines
+          - state diagrams
+      ---
+      ### Ideas for all of us
+      Use Collaborative tools
         - Any system that we don't _all_ have access to is a _constraint_
         - Use tools with version control and/or change tracking
+        - One source of truth
       ---
-      - Unify / standardized inboxes
-        - All work gets a ticket
-          - because that's how we track work
+      ### Ideas for all of us
+      Iterate directly on Design Artifacts (Figma)
+        - communicate the ask
+        - aids communication between designers, product owners and developers
+        - tightens feedback loop
+        - change tracking
       ---
-      - Ask "Why"
-        - Why it's hard to ask why
-          - seems like resistance
-          - sounds like a pre-amble to a no
-        - Why is the guidance system for future decisions
-        - The answer can be dissapointing
-          - that's ok
+      ### Ideas for all of us
+      Managing Comms
+        - Slack, Teams, Email
+          - are not project management tools
+          - channels > DMs
+        - Meetings
+          - Meetings are about exchanging information
+            - someone should be _writing things down_
+          - OR making decisions
+            - someone should be **definitely** be _writing things down_
+          - OR About creating culture and flow
       ---
-      - Track time on our work
-        - only way to improve estimates
-        - only way to measure _actual_ throughput
-        - only way to detect _patterns_ of work
-        - Time spent does not equal value delivered
+      > Efficiency is doing things right, effectiveness is doing the right thing
+      > - Peter Drucker
       ---
-      - Unit Tests!
-        - they don't _all_ have to run in CI
-      - automated browser testing
-        - for testing features _that you are building_
-        - for regression testing
+      ### Resources
+      - [Agile Manifesto](https://agilemanifesto.org/)
+      - [Scrum Guide](https://scrumguides.org/scrum-guide.html)
+      - [The Phoenix Project](https://www.amazon.com/Phoenix-Project-DevOps-Helping-Business/dp/1942788290)
+      - [The Goal](https://www.amazon.com/Goal-Process-Ongoing-Improvement/dp/0884271951)
+      - [Operations Management](https://www.amazon.com/Operations-Management-Processes-Supply-Chains/dp/0134741064)
+      - [An Elegant Puzzle: Systems of Engineering Management](https://www.amazon.com/Elegant-Puzzle-Systems-Engineering-Management/dp/1732265186)
+      - [Excalidraw](https://excalidraw.com/)
+      - [Mermaid.js](https://mermaid-js.github.io/mermaid/#/)
+      - [Figjam](https://www.figma.com/figjam/)
+      - [DevOps Demystified](https://www.youtube.com/watch?v=h5E--QSBVBY&index=4&list=WL&ab_channel=Deirdr%C3%A9Straughan)
+      - [The System of Profound Knowledge](https://www.infoq.com/presentations/system-profound-knowledge/)
 
       </textarea>
     </section>
@@ -848,11 +844,11 @@
 <script src="node_modules/reveal.js/dist/reveal.js"></script>
 <script>
   Reveal.initialize({
-  hash: true,
-  transition: 'slide',
-  margin: 0.3,
-  // center: false,
-  plugins: [RevealMarkdown]
+    hash: true,
+    transition: 'slide',
+    margin: 0.2,
+    // center: false,
+    plugins: [RevealMarkdown]
   });
 
   Reveal.on('slidechanged', function(event) {
