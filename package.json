@@ -1,4 +1,9 @@
 {
+  "name": "agile-talk",
+  "scripts": {
+    "start": "http-server . -p 8080 -c-1",
+    "build": "echo 'No build step required'"
+  },
   "dependencies": {
     "http-server": "^14.1.1",
     "reveal.js": "^5.2.1"
